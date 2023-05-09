@@ -1,0 +1,32 @@
+﻿@page
+@model WebAgent.Pages.Client.IndexModel
+@{
+	ViewData["Title"] = "List product";
+}
+<br>
+<h2>List Product</h2>
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.lp)
+		{
+			<tr>
+				<td>@item.id</td>
+				<td>@item.name</td>
+				<td>@item.price</td>
+				<td>@item.quantity</td>
+				<td>
+					<a class="btn btn-primary btn-sm" href="/Client/Buy?id=@item.id">Buy</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
